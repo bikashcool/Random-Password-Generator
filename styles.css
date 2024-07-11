@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mukta", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(51, 51, 49, 0.95) 0%, rgba(51, 51, 49, 0.79) 48%, rgba(157, 0, 0, 0.87) 100%);
+}
+
+#wrapper {
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: #FFF5E1;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    opacity: 0.8;
+}
+
+.display-container {
+    position: relative;
+    background-color: #414141;
+    border-bottom: 0.35rem solid #774141;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.display {
+    color: #FFF5E1;
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: #FFDBC5;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.display-container button {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.input-container {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: #414141;
+    border-bottom: 0.35rem solid #774141;
+    padding: 2rem;
+}
+
+.length-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container #p1 {
+    color: #FFF5E1;
+    font-size: 1.5rem;
+}
+
+.length-container #p2 {
+    color: #FFF5E1;
+    font-size: 1.5rem;
+}
+
+.strength-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p {
+    color: #FFF5E1;
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generateButton {
+    all: unset;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #a03541a6;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid #e975756e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFDBC5;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.boxes input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #83FFE6;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.boxes input:checked {
+    background-color: #83FFE6;
+}
+
+.boxes input:checked::before {
+    content: '✔';
+    color: #2C2C2C;
+    position: absolute;
+    font-size: 1.05rem;
+    font-weight: 500;
+    left: 50%;
+    top: -3.5px;
+    transform: translateX(-50%);
+}
+
+.boxes label {
+    color: #FFF5E1;
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+.slider {
+    height: 0.75rem;
+    width: 100%;
+    appearance: none;
+    cursor: pointer;
+    background-color: #2b191e;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(90deg, rgba(135, 59, 59, 1) 0%, rgba(182, 35, 35, 1) 50%, rgba(173, 2, 2, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    appearance: none;
+    border-radius: 50%;
+    background-color: #cf7d50;
+    cursor: pointer;
+    margin-top: -3px;
+    transition: all 100ms ease;
+    box-shadow: 0px 0px 20px 0px rgba(255, 179, 151, 0.50);
+}
+
+.slider:focus {
+    outline: 3px solid #9d5d3e;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid #e44f45;
+    background-color: #bc531a;
+    box-shadow: 0px 0px 25px 5px rgba(188, 105, 26, 0.80);
+}
+
+.copybtn {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #6e4444;
+    color: #FFF5E1;
+    font-size: 1.25rem;
+    top: -40px;
+    left: -25px;
+    padding: 2px 4px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slider::-moz-range-thumb {
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: var(--vb-yellow);
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb:hover {
+    outline: 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
